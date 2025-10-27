@@ -1,7 +1,4 @@
-﻿#include <Windows.h>
-#include <thread>
-
-#include <Exploit/Utils.hpp>
+﻿#include <Exploit/Utils.hpp>
 #include <Exploit/Globals.hpp>
 #include <Communication/Communication.hpp>
 #include <Exploit/TaskScheduler/TaskScheduler.hpp>
@@ -21,12 +18,12 @@ void MainThread()
 
         if (SharedVariables::LastDataModel != DataModel)
         {
-            SharedVariables::LastDataModel = DataModel;
-            if (!Utils::IsInGame(SharedVariables::LastDataModel))
+            if (!Utils::IsInGame(DataModel))
             {
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
                 continue;
             }
+            SharedVariables::LastDataModel = DataModel;
 			SharedVariables::ExecutionRequests.clear();
 
             TaskScheduler::SetupExploit();

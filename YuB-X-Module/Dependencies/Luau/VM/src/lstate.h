@@ -203,8 +203,8 @@ typedef struct global_State
     struct lua_State* mainthread,
     UpVal uvhead,                                    // head of double-linked list of all open upvalues
     struct LuaTable* mt[LUA_T_COUNT],                   // metatables for basic types
-    GSTATE_TTNAME_ENC<TString*> ttname[LUA_T_COUNT],       // names for basic types
-    GSTATE_TMNAME_ENC<TString*> tmname[TM_N]);             // array with tag-method names
+    TString* ttname[LUA_T_COUNT],       // names for basic types
+    TString* tmname[TM_N]);             // array with tag-method names
 
     TValue pseudotemp; // storage for temporary values used in pseudo2addr
 
@@ -251,10 +251,10 @@ struct lua_State
     LUAU_SHUFFLE6(LUAU_SEMICOLON_SEP,
     StkId top,                                        // first free slot in the stack
     StkId base,                                       // base of current function
-    LSTATE_GLOBAL_ENC<global_State*> global,
+    global_State* global,
     CallInfo* ci,                                     // call info for current function
     StkId stack_last,                                 // last free slot in the stack
-    StkId stack);                                    // stack base                                     // stack base
+    StkId stack);                                    // stack base
 
 
     CallInfo* end_ci;                          // points after end of ci array

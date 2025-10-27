@@ -18,7 +18,7 @@ typedef union GCObject GCObject;
 */
 // clang-format off
 #define CommonHeader \
-     LUAU_SHUFFLE3(LUAU_SEMICOLON_SEP, uint8_t tt; uint8_t marked; uint8_t memcat)
+     LUAU_SHUFFLE3(LUAU_SEMICOLON_SEP, uint8_t tt, uint8_t marked, uint8_t memcat)
 // clang-format on
 
 /*
@@ -249,7 +249,7 @@ typedef struct TString
     TString* next; // next string in the hash table bucket
 
     TSTRING_HASH_ENC<unsigned int> hash;
-    TSTRING_LEN_ENC<unsigned int> len;
+    unsigned int len;
 
     char data[1]; // string data is allocated right after the header
 } TString;
@@ -298,11 +298,11 @@ typedef struct Proto
     uint8_t maxstacksize,
     uint8_t flags);
 
-    PROTO_MEMBER1_ENC<TValue*> k;              // constants used by the function
-    PROTO_MEMBER1_ENC<Instruction*> code;      // function bytecode
+    TValue* k;              // constants used by the function
+    Instruction* code;      // function bytecode
 
     LUAU_SHUFFLE2(LUAU_SEMICOLON_SEP,
-    PROTO_MEMBER1_ENC<struct Proto**> p,       // functions defined inside the function
+    struct Proto** p,       // functions defined inside the function
     const Instruction* codeentry);
 
     void* execdata;
@@ -397,7 +397,7 @@ typedef struct Closure
     {
         struct
         {
-            CLOSURE_FUNC_ENC<lua_CFunction> f;
+            lua_CFunction f;
             CLOSURE_CONT_ENC<lua_Continuation> cont;
             CLOSURE_DEBUGNAME_ENC<const char*> debugname;
             TValue upvals[1];
@@ -476,9 +476,9 @@ typedef struct LuaTable
 
 
     LUAU_SHUFFLE4(LUAU_SEMICOLON_SEP,
-    TABLE_META_ENC<struct LuaTable*> metatable,
-    TABLE_MEMBER_ENC<TValue*> array,  // array part
-    TABLE_MEMBER_ENC<LuaNode*> node,
+    struct LuaTable* metatable,
+    TValue* array,  // array part
+    LuaNode* node,
     GCObject* gclist);
 } LuaTable;
 // clang-format on
