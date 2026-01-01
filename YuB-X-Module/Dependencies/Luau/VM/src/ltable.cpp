@@ -50,7 +50,7 @@ const LuaNode luaH_dummynode = {
     {{NULL}, {0}, LUA_TNIL, 0} // key
 };
 
-#define dummynode reinterpret_cast<LuaNode*>(Offsets::Luau::LuaH_DummyNode)
+#define dummynode reinterpret_cast<LuaNode*>(Offsets::LuaU::LuaH_DummyNode)
 
 // hash is always reduced mod 2^k
 #define hashpow2(t, n) (gnode(t, lmod((n), sizenode(t))))

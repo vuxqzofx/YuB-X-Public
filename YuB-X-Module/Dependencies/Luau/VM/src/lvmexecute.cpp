@@ -194,7 +194,7 @@ inline bool luau_skipstep(uint8_t op)
 
 void luau_execute(lua_State* L)
 {
-    Roblox::Luau_Execute(L);
+    Roblox::LuaU_Execute(L);
 }
 
 int luau_precall(lua_State* L, StkId func, int nresults)

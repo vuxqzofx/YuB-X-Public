@@ -25,20 +25,20 @@ struct WeakThreadRef
 
 namespace Offsets
 {
-    const uintptr_t Print = REBASE(0x17C51F0);
-    const uintptr_t TaskDefer = REBASE(0x1284C90);
+    const uintptr_t Print = REBASE(0x17C52C0);
+    const uintptr_t TaskDefer = REBASE(0x1284CD0);
     const uintptr_t RawScheduler = REBASE(0x7E1CB88);
-    const uintptr_t OpcodeLookupTable = REBASE(0x5BF4A70);
-    const uintptr_t ScriptContextResume = REBASE(0x101C480);
+    const uintptr_t OpcodeLookupTable = REBASE(0x5BF49C0);
+    const uintptr_t ScriptContextResume = REBASE(0x101C4C0);
 
-    namespace Luau
+    namespace LuaU
     {
         const uintptr_t ScriptContextResume = 0x850;
 
-        const uintptr_t LuaD_Throw = REBASE(0x37D28D0);
-        const uintptr_t Luau_Execute = REBASE(0x37D9E60);
-        const uintptr_t LuaO_NilObject = REBASE(0x5730768);
-        const uintptr_t LuaH_DummyNode = REBASE(0x5730168);
+        const uintptr_t LuaD_Throw = REBASE(0x37D29A0);
+        const uintptr_t LuaU_Execute = REBASE(0x37D9F34);
+        const uintptr_t LuaO_NilObject = REBASE(0x5730778);
+        const uintptr_t LuaH_DummyNode = REBASE(0x572FE88);
     }
 
     namespace DataModel
@@ -62,8 +62,8 @@ namespace Roblox
 {
     inline auto TaskDefer = (int(__fastcall*)(lua_State*))Offsets::TaskDefer;
     inline auto Print = (uintptr_t(__fastcall*)(int, const char*, ...))Offsets::Print;
-    inline auto Luau_Execute = (void(__fastcall*)(lua_State*))Offsets::Luau::Luau_Execute;
-    inline auto LuaD_Throw = (void(__fastcall*)(lua_State*, int))Offsets::Luau::LuaD_Throw;
+    inline auto LuaU_Execute = (void(__fastcall*)(lua_State*))Offsets::LuaU::LuaU_Execute;
+    inline auto LuaD_Throw = (void(__fastcall*)(lua_State*, int))Offsets::LuaU::LuaD_Throw;
     inline auto ScriptContextResume = (int(__fastcall*)(int64_t, DebuggerResult*, WeakThreadRef**, int32_t, bool, const char*))Offsets::ScriptContextResume;
 }
 

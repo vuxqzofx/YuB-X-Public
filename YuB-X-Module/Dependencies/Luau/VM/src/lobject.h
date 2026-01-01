@@ -454,7 +454,7 @@ typedef struct LuaTable
 #define twoto(x) ((int)(1 << (x)))
 #define sizenode(t) (twoto((t)->lsizenode))
 
-#define luaO_nilobject reinterpret_cast<TValue*>(Offsets::Luau::LuaO_NilObject)
+#define luaO_nilobject reinterpret_cast<TValue*>(Offsets::LuaU::LuaO_NilObject)
 
 LUAI_DATA const TValue luaO_nilobject_;
 
