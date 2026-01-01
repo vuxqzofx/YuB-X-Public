@@ -14,17 +14,17 @@ struct RobloxExtraSpace
     struct Shared
     {
         char Pad0[0x20];
-        void* ScriptContext;
+        void* ScriptContext; // 0x20
     };
 
     char Pad1[0x18];
-    struct Shared* SharedExtraSpace;
+    struct Shared* SharedExtraSpace; // 0x18
     char Pad2[0x10];
-    std::int32_t Identity;
+    std::int32_t Identity; // 0x30
     char Pad3[0x1C];
-    uintptr_t Capabilities;
+    uintptr_t Capabilities; // 0x50
     char Pad4[0x28];
-    std::weak_ptr<uintptr_t> Script;
+    std::weak_ptr<uintptr_t> Script; // 0x80
 };
 
 // option for multiple returns in `lua_pcall' and `lua_call'

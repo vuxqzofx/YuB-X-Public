@@ -51,8 +51,8 @@ namespace Offsets
 
 	namespace ExtraSpace
 	{
-		const uintptr_t Identity = 0x30;
-		const uintptr_t Capabilities = 0x50;
+        const uintptr_t RequireBypass = 0x920;
+        const uintptr_t InstanceToLuaState = 0x3E0;
         const uintptr_t ScriptContextToResume = 0x850;
 	}
 }
