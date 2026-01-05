@@ -22,7 +22,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{144f4a4d-ffe7-4400-b844-485126a6ad2e}</ProjectGuid>
-    <RootNamespace>YuBXModuleV2</RootNamespace>
+    <RootNamespace>YuBXModule</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>YuB-X-Module</ProjectName>
   </PropertyGroup>
