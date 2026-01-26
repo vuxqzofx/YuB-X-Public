@@ -7,5 +7,5 @@ This roblox executor source is a clean v2 of the YuB-X-Low source and is made to
 - Level 8
 
 Updated for: version-1588a9c58c674e38   
-Injector: https://github.com/vuxqzofx/YuB-X-Injector  
-Join: https://discord.gg/yubx for more
+Injector: https://github.com/vuxqzofx/Roblox-Injector  
+Join https://discord.gg/wJCZ6Wy5qN for more
